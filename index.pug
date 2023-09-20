@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    link(
+      rel="stylesheet",
+      href="css/style.css"
+      )
+    title Ecommerce
+
+    script(
+      src="node_modules/axios/dist/axios.min.js"
+      )
+  body
+    .container 
+      header
+        .logo
+          h1 Ecommerce
+        nav
+          ul.nav-list
+            li 
+              .search
+            li
+              .account
+            li
+              .cart
+                button(onClick="openCart()").cart-btn Cart
+      section#products.products
+      
+
+    
+    script(
+      src="js/script.js"
+      )

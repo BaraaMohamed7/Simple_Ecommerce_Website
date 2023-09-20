@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ecommerce</title>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container"> 
+      <header>
+        <div class="logo">
+          <h1>Ecommerce</h1>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li> 
+              <div class="search"></div>
+            </li>
+            <li>
+              <div class="account"></div>
+            </li>
+            <li>
+              <div class="cart">
+                <button class="cart-btn" onClick="openCart()">Cart</button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="products" id="products"></section>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
