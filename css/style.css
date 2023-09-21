@@ -30,14 +30,16 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	text-align: center;
-	padding: 30px;
+	padding: 40px;
 	border-radius: 20px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .product-img {
 	height: 120px;
-	margin-bottom: 20px;
+	margin-bottom: 3cqmin;
+	background-color: #fff;
+	border-radius: 10px;
 }
 
 .product-description {
@@ -52,4 +54,5 @@ button {
 	padding: 10px 20px;
 	border-radius: 10px;
 	cursor: pointer;
+	margin: 40px auto 10px;
 }
