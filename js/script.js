@@ -16,15 +16,18 @@ async function getProducts() {
   `;
 
   for (product of products) {
-    document.getElementById("products").innerHTML += `
+    let productElement = `
     <div class="product">
-      <img src="${product.image}" class="product-img">
+      <div class="product-image">
+        <img src="${product.image}">
+      </div>
       <h2 class="product-name">${product.title}</h2>
       <p class="product-description">${product.description}</p>
-      <h3 class="product-description">${product.price}</h3>
+      <h3 class="product-price">${product.price}</h3>
       <button onClick="viewProduct(${product.id})">View</button>
     </div>
     `
+    document.getElementById("products").innerHTML += productElement;
   }
 }
 getProducts();
@@ -36,17 +39,18 @@ async function viewProduct(id) {
   let product = response.data;
 
   document.getElementById("products").innerHTML = `
-  <div class="product">
-    <img src="${product.image}" class="product-img">
+  <div class="product product-view">
+      <div class="product-image">
+        <img src="${product.image}">
+      </div>
       <h2 class="product-name">${product.title}</h2>
       <p class="product-description">${product.description}</p>
-      <h3 class="product-description">${product.price}</h3>
+      <h3 class="product-price">${product.price}</h3>
       <button onClick='addProduct("${product.id}", "${product.title}", "${product.description}", "${product.price}", "${product.image}")'>Add to cart</button>
       <button onClick="getProducts()">return</button>
   </div>
   `
 }
-
 
 function addProduct(productId, productTitle, productDescription, productPrice, productImage) {
   let productData = {
@@ -87,13 +91,19 @@ function openCart() {
 
   for (product of products) {
 
-    document.getElementById("products").innerHTML = `
+    document.getElementById("products").innerHTML += `
     <div class="product">
-      <img src="${product.image}" class="product-img">
+      <div class="product-image">
+        <img src="${product.image}">
+      </div>
       <h2 class="product-name">${product.title}</h2>
       <p class="product-description">${product.description}</p>
-      <h3 class="product-description">${product.price}</h3>
+      <h3 class="product-price">${product.price}</h3>
     </div>
     `
   }
+}
+
+function search() {
+
 }

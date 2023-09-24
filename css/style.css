@@ -1,3 +1,12 @@
+:root {
+	--main-color: #000732;
+	--secondary-color: #ffbf34;
+}
+
+:any-link {
+	color: #fff;
+	text-decoration: none;
+}
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -15,19 +24,41 @@ ul {
 header {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	padding: 20px;
+	gap: 50px;
+	background-color: var(--main-color);
+	color: #fff;
 }
 
 .nav-list {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex: 1;
+}
+
+form {
+	border-radius: 4px;
+	width: 400px;
+	display: flex;
+	overflow: hidden;
+}
+
+input {
+	padding: 8px 16px;
+	border: none;
+	outline: none;
+	flex-grow: 9;
+}
+
+form button {
+	flex-grow: 1;
+	border-radius: 0;
 }
 
 .products {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	padding: 40px 60px;
 	gap: 30px;
 }
@@ -36,37 +67,64 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
 	text-align: center;
-	padding: 40px;
+	padding: 10px;
 	border-radius: 20px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	background-color: #eee;
+	min-height: 730px;
 }
 
-.product-img {
-	height: 120px;
+.product-image {
+	width: 100%;
+	aspect-ratio: 1 / 1;
 	margin-bottom: 3cqmin;
 	background-color: #fff;
 	border-radius: 10px;
+	overflow: hidden;
+}
+.product-image img {
+	width: 100%;
+}
+
+.product-name {
+	margin-top: 20px;
 }
 
 .product-description {
-	font-size: 16px;
-	padding: 10px;
-	max-width: 60%;
-	margin-top: 10px;
+	font-size: 14px;
+	padding: 0 15px;
+	margin-top: 30px;
 	line-height: 1.6;
 	color: #676565;
 }
 
+.product-price {
+	margin: 40px 0 20px;
+}
+
 button {
 	border: none;
-	background-color: black;
-	color: white;
+	background-color: var(--secondary-color);
+	color: var(--main-color);
+	font-weight: bold;
 	padding: 10px 20px;
-	border-radius: 10px;
+	border-radius: 4px;
 	cursor: pointer;
-	margin: 40px auto 10px;
+}
+
+.product button {
+	margin: auto 0 10px 0;
+}
+
+.product-view {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.product-view .product-image {
+	height: 200px;
+	width: auto;
 }
 
 .popup {
