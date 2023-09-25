@@ -231,10 +231,15 @@ main {
 		width: auto;
 	}
 
-	.products {
+	.products,
+	main {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.product {
+		width: 80%;
 	}
 
 	.categories {
