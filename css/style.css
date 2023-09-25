@@ -239,7 +239,7 @@ main {
 	}
 
 	.product {
-		width: 80%;
+		min-width: 80%;
 	}
 
 	.categories {
