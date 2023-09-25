@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Ecommerce</title><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="node_modules/axios/dist/axios.min.js"></script>
-    <script src="js/script.js" defer></script>
-  </head>
-  <body>
-    <div class="container"> 
-      <header>
-        <div class="logo"><a href="index.html">
-            <h1>Ecommerce</h1></a></div>
-        <ul class="nav-list">
-          <li> 
-            <form class="search" action="#">
-              <input type="text" id="searchBar" placeholder="Search">
-              <button id="searchBtn">search</button>
-            </form>
-          </li>
-          <li>
-            <div class="cart">
-              <button class="cart-btn" onClick="openCart()">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-</svg>
-                <div class="cart-amount"></div>
-              </button>
-            </div>
-          </li>
-        </ul>
-      </header>
-      <ul class="categories" id="categories"></ul>
-      <section class="products" id="products"></section>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Ecommerce</title>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+			integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+			defer
+		></script>
+		<script src="../node_modules/axios/dist/axios.min.js"></script>
+		<script src="dist/main.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">
+					<a href="./#/">
+						<h1>Ecommerce</h1>
+					</a>
+				</div>
+				<ul class="nav-list">
+					<li>
+						<form class="search" action="#">
+							<input type="text" id="searchBar" placeholder="Search" />
+							<button id="searchBtn">search</button>
+						</form>
+					</li>
+					<li>
+						<div class="cart"></div>
+						<a href="./#/cart">Cart</a>
+					</li>
+				</ul>
+			</header>
+			<ul class="categories" id="categories"></ul>
+			<main id="main-container"></main>
+		</div>
+	</body>
 </html>
