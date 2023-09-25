@@ -3,28 +3,26 @@ html
   head
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    //- link(
-    //-   rel="stylesheet",
-    //-   href="css/style.css"
-    //-   )
+   
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     link(
       rel="stylesheet",
       href="./css/style.css"
       )
-    link(
-      rel="stylesheet",
-      href="./styles.css"
-      )
+
     title Ecommerce
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/svg-with-js.min.css" integrity="sha512-4oP5WpLD1feGamTDxyKyYjJj9a15AlPfKOt78LpGmZ+XfrUcuC7hjHVTuzhJhO4pPvi3RHL6CI2Tyjdoik3AnA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     script(
       src="../node_modules/axios/dist/axios.min.js",
       )
-    //- script(
-    //-   src="js/script.js",
-    //-   defer
-    //-   )
+
+
+    //- script(src="dist/main.js" defer)
+    script(src="src/index.js" defer type ="module")
+    
   body
     .container 
       header
@@ -37,20 +35,21 @@ html
               input(type="text" id="searchBar",
               placeholder="Search"
               )
-              button(id="searchBtn") search
+              button(
+              id="searchBtn",
+              class ="btn"
+              ) 
+                |  search
           li
             .cart
-            a(href="./#/cart") Cart
-              //- button(onClick="openCart()").cart-btn 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
+              a(
+              href="./#/cart",
+              class ="btn cart-btn"
+              ) 
+                |  Cart
                 .cart-amount
         
       ul.categories#categories
       main#main-container
-      //- section#products.products
-    script(src="main.js")
-
     
 

@@ -1,3 +1,4 @@
+import Rating from "../components/rating.js";
 const Home = {
   render: async () => {
     let response = await axios.get('https://fakestoreapi.com/products');
@@ -6,15 +7,19 @@ const Home = {
       <ul class="products">
       ${products.map((product) => `
         <li class="product">
-        <a href="./#/product/${product.id}">
           <div class="product-image">
             <img src="${product.image}">
           </div>
-          </a>
           <h2 class="product-name">${product.title}</h2>
           <p class="product-description">${product.description}</p>
+          <div class="product-rating">
+          ${Rating.render({
+      value: product.rating.rate,
+      text: `${product.rating.count} reviews`,
+    })}
+          </div>
           <h3 class="product-price">${product.price}</h3>
-          <button onClick="viewProduct(${product.id})">View</button>
+          <a href="./#/product/${product.id}" class="btn">View Product</a>
         </li>
       `
     ).join('\n')}
