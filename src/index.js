@@ -11,8 +11,13 @@ const routes = {
   '/product/:id': Product,
   '/cart/:id': CartRoute,
   '/cart': CartRoute,
-  '/search': Search,
 };
+const titles = {
+  '/': "Home",
+  '/product/:id': "Product",
+  '/cart/:id': "Cart",
+  '/cart': "Cart",
+}
 const router = async () => {
   const request = parseRequestUrl();
   const parseUrl =
@@ -29,8 +34,11 @@ const router = async () => {
     </div>
   `;
   main.innerHTML = await route.render();
-  document.querySelector('.cart-amount').innerHTML = getCartItems() ? getCartItems().length : 0;
+  document.title = `Baraa Ecommerce || ${titles[parseUrl]} `
+  document.getElementById('search').innerHTML = await Search.render();
+  Search.after_render();
   route.hasOwnProperty('after_render') ? await route.after_render() : null;
+  document.querySelector('.cart-amount').innerHTML = getCartItems() ? getCartItems().length : 0;
 };
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);

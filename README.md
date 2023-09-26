@@ -1,15 +1,3 @@
-# 🚀 Welcome to your new awesome project!
+# Welcome Baraa Ecommerce Website!
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+This project has been created using Html(using PugJs), Css,pure JavaScript

@@ -18,7 +18,7 @@ const Product = {
     return `
     <li class="product product-view">
           <div class="product-image">
-            <img src="${product.image}">
+            <img src="${product.image}" alt="${product.title}">
           </div>
           <h2 class="product-name">${product.title}</h2>
           <p class="product-description">${product.description}</p>
