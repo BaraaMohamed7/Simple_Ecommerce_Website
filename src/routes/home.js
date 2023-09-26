@@ -1,7 +1,11 @@
 import Rating from "../components/rating.js";
 const Home = {
   render: async () => {
-    let response = await axios.get('https://fakestoreapi.com/products');
+    let response = await axios.get('https://fakestoreapi.com/products', {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
+    });
     let products = await response.data;
     return `
       <ul class="products">
