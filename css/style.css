@@ -278,12 +278,16 @@ main {
 		align-items: center;
 	}
 
+	header li:not(:first-child) {
+		margin: 10px 0;
+	}
+
 	form {
 		width: auto;
 		margin-bottom: 10px;
 	}
 
-	.products,
+	j .products,
 	main {
 		display: flex;
 		flex-direction: column;

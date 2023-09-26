@@ -10,7 +10,18 @@ export const parseRequestUrl = () => {
 };
 
 
+
+export const loading = () => {
+  document.getElementById('main-container').innerHTML = `
+    <div class="loading">
+      <div>
+      </div>
+    </div>
+  `;
+};
+
 export const rerender = async (component) => {
+  loading();
   document.getElementById('main-container').innerHTML = await component.render();
   component.hasOwnProperty('after_render') ? await component.after_render() : null;
 };

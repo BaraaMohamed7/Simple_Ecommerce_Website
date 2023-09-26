@@ -1,10 +1,11 @@
 import Home from './routes/home.js';
 import Product from './routes/product.js';
-import parseRequestUrl from './utils.js';
+import parseRequestUrl, { loading } from './utils.js';
 import Error404Screen from './routes/error404route.js'
 import CartRoute from './routes/cartRoute.js';
 import Search from './routes/Search.js';
 import { getCartItems } from './localStorage.js';
+import Categories from './routes/Categories.js';
 
 const routes = {
   '/': Home,
@@ -27,16 +28,18 @@ const router = async () => {
   const route = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
 
   const main = document.getElementById('main-container');
-  main.innerHTML = `
-    <div class="loading">
-      <div>
-      </div>
-    </div>
-  `;
+  loading()
+
   main.innerHTML = await route.render();
+
   document.title = `Baraa Ecommerce || ${titles[parseUrl]} `
+
+
+  document.getElementById('categories').innerHTML = await Categories.render();
+  Categories.after_render();
   document.getElementById('search').innerHTML = await Search.render();
   Search.after_render();
+
   route.hasOwnProperty('after_render') ? await route.after_render() : null;
   document.querySelector('.cart-amount').innerHTML = getCartItems() ? getCartItems().length : 0;
 };

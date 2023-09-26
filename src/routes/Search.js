@@ -1,7 +1,5 @@
 import Home from '../routes/home.js';
-import { rerender } from '../utils.js';
-// import Rating from "../components/rating.js";
-
+import { loading, rerender } from '../utils.js';
 const Search = {
   render: async () => {
     return `
@@ -30,6 +28,7 @@ const Search = {
       if (products.length == 0) {
         main.innerHTML = `<h3> No results </h3>`
       } else {
+        loading();
         let productsList = `
           <ul class="products">
             ${products.map((product) => `${product.outerHTML}`).join('\n')}
