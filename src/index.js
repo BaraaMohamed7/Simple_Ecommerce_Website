@@ -40,6 +40,11 @@ const router = async () => {
   document.getElementById('search').innerHTML = await Search.render();
   Search.after_render();
 
+  document.getElementById('home-btn').addEventListener('click', async () => {
+    loading();
+    main.innerHTML = await Home.render();
+  })
+
   route.hasOwnProperty('after_render') ? await route.after_render() : null;
   document.querySelector('.cart-amount').innerHTML = getCartItems() ? getCartItems().length : 0;
 };
