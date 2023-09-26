@@ -12,7 +12,7 @@ export const parseRequestUrl = () => {
 
 export const rerender = async (component) => {
   document.getElementById('main-container').innerHTML = await component.render();
-  await component.after_render();
+  component.hasOwnProperty('after_render') ? await component.after_render() : null;
 };
 
 export default parseRequestUrl;
